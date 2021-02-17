@@ -1,41 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="theme-color" content="#000000" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>TinyBlue</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/fixmenu_pagetop.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(function(){
+$('a[href^="#"]').click(function() {
+var speed = 800;
+var href= $(this).attr("href");
+var target = $(href == "#" || href == "" ? 'html' : href);
+var position = target.offset().top;
+$('body,html').animate({scrollTop:position}, speed, 'swing');
+return false;
+});
+});
+</script>
+</head>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<body>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<header>
+<h1 id="logo"><a href="index.html"><img src="images/logo.png" alt="Tiny Blue"></a></h1>
+<nav id="menubar">
+<ul>
+<li><a href="#company">About</a></li>
+<li><a href="#service">Service</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<div id="container">
+
+<div id="contents">
+<!--/#new-->
+
+<section id="company">
+
+<h2>about TinyBlue</h2>
+<table class="ta1">
+<th>Business</th>
+<td>IT Consulting and Front-End Web & Mobile Development</td>
+</tr>
+<tr>
+<th>Founded</th>
+<td>Jan 1, 2021</td>
+</tr>
+<tr>
+<th>CEO</th>
+<td>Simon Sasaki</td>
+</tr>
+<tr>
+</table>
+</section>
+<!--/#company-->
+
+<section id="service">
+
+<h2>Services & Consulting</h2>
+
+<div class="list">
+<img src="images/sample1.jpg" alt="">
+<h4>IT Consulting</h4>
+<p>Engage deeply with customers, gain new data insights and unlock brand value.</p>
+</div>
+
+<div class="list">
+<img src="images/sample2.jpg" alt="">
+<h4>Front-End Web & Mobile Development</h4>
+<p>Build and deploy secure, scalable mobile and web apps fast.</p>
+</div>
+
+<div class="list">
+<img src="images/sample3.jpg" alt="">
+<h4>Training and Certification</h4>
+<p>Learn from experts. Advance your skills and knowledge. Build your future in the Cloud.</p>
+</div>
+
+</section>
+<!--/#service-->
+
+<section id="contact">
+
+<h2>Contact</h2>
+<p class="c">Get answers to questions</p>
+<p class="c"><span class="big1">050-5539-5539</span><br>
+Open AM9:00〜PM6:00</p>
+</section>
+<!--/#contact-->
+
+</div>
+<!--/#contents-->
+
+</div>
+<!--/#container-->
+
+<footer>
+<small>Copyright&copy; <a href="index.html">TinyBlue</a> All Rights Reserved.</small>
+</footer>
+
+<!--ページの上部に戻る「↑」ボタン-->
+<p class="nav-fix-pos-pagetop"><a href="#">↑</a></p>
+
+</body>
 </html>
